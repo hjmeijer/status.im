@@ -538,14 +538,28 @@ select[multiple] {
   width: 800px;
   margin: 0 auto; }
 
+.get-status-desktop-warning, .get-status-desktop-mobile-warning {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  text-align: center; }
+  .get-status-desktop-warning p, .get-status-desktop-mobile-warning p {
+    color: #939ba1;
+    font-size: 14px;
+    font-style: italic; }
+
 .get-status-desktop-links {
   padding: 24px 0; }
 
-.get-status-desktop-mobile-links {
+.get-status-desktop-mobile-links, .get-status-desktop-mobile-warning {
   display: none; }
 
 .button-icon.button-icon--linux {
   background-image: url(../img/icon-linux-blue-small.svg); }
+
+.button-icon.button-icon--windows {
+  background-image: url(../img/icon-windows-blue-small.svg); }
 
 .get-status-desktop-links ul {
   display: flex;
@@ -576,9 +590,6 @@ select[multiple] {
 
 .get-status-desktop-links ul a.desktop-link--windows {
   background-image: url(../img/icon-windows-blue.svg); }
-
-.get-status-desktop-links ul span.desktop-link--windows.desktop-link--disabled {
-  background-image: url(../img/icon-windows-gray.svg); }
 
 .get-status-desktop-links ul a.desktop-link--linux {
   background-image: url(../img/icon-linux-blue.svg); }
@@ -734,14 +745,17 @@ select[multiple] {
 @media (max-width: 748px) {
   .get-status-links {
     padding: 0 32px 32px; }
-  .get-status-desktop-links {
+  .get-status-desktop-links, .get-status-desktop-warning {
     display: none; }
-  .get-status-desktop-mobile-links {
+  .get-status-desktop-mobile-links, .get-status-desktop-mobile-warning {
     display: block; }
-  .get-status-desktop-mobile-links .button:first-child {
+  .get-status-desktop-mobile-links .button:not(:last-child) {
     margin: 0 0 16px 0; }
   .get-status-desktop-mobile-links {
     margin: 16px 0 24px 0; }
+  .get-status-desktop-mobile-warning {
+    margin-bottom: 12px;
+    margin-top: 4px; }
   .get-status-info {
     width: 100%;
     flex-direction: column;
@@ -828,6 +842,9 @@ select[multiple] {
   .get-status-intro h1 {
     font-size: 24px;
     line-height: 1.4em; }
+  .get-status-desktop-mobile-warning {
+    margin-bottom: 12px;
+    margin-top: 18px; }
   .get-status-desktop-screen {
     width: 441px;
     height: 361px; } }
